@@ -39,7 +39,7 @@ for index, (name1, email) in enumerate(zip(df['Name'], df['Email'])):
         #cv2.putText(image, email, (730, 1170), cv2.FONT_HERSHEY_COMPLEX, 2, (0, 0, 0), 1, cv2.LINE_AA)
 
         # Save the certificate with a unique name
-        certificate_path ='/sl_project/blob/main/newcertficate\{}_certificate.png'.format(name1)
+        certificate_path ='/newcertficate\{}_certificate.png'.format(name1)
  
         cv2.imwrite(certificate_path, image)
 
