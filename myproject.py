@@ -8,7 +8,8 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 
 # Load the Google Sheets API credentials
-gc = gspread.service_account(filename="/hitesh-411510-62ba6eca1bbd.json")
+gc = gspread.service_account(filename="hitesh-411510-62ba6eca1bbd.json")
+
 
 
 # Open the Google Sheets document by title
@@ -32,14 +33,14 @@ rows_to_delete = []
 for index, (name1, email) in enumerate(zip(df['Name'], df['Email'])):
     try:
         # Load the certificate image
-        image = cv2.imread("/certificate.png")
+        image = cv2.imread("certificate.png")
 
         # Add text to the certificate
         cv2.putText(image, name1, (650, 780), cv2.FONT_HERSHEY_COMPLEX, 3, (0, 0, 0), 1, cv2.LINE_AA)
         #cv2.putText(image, email, (730, 1170), cv2.FONT_HERSHEY_COMPLEX, 2, (0, 0, 0), 1, cv2.LINE_AA)
 
         # Save the certificate with a unique name
-        certificate_path ='/newcertficate\{}_certificate.png'.format(name1)
+        certificate_path = '/newcertificate/{}_certificate.png'.format(name1)
  
         cv2.imwrite(certificate_path, image)
 
