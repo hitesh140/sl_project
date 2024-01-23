@@ -32,7 +32,7 @@ rows_to_delete = []
 for index, (name1, email) in enumerate(zip(df['Name'], df['Email'])):
     try:
         # Load the certificate image
-        image = cv2.imread(r"C:\Users\Dell\Desktop\python 2023\certificate.png")
+        image = cv2.imread(sl_project/blob/main/certificate.png)
 
         # Add text to the certificate
         cv2.putText(image, name1, (650, 780), cv2.FONT_HERSHEY_COMPLEX, 3, (0, 0, 0), 1, cv2.LINE_AA)
